@@ -1,9 +1,7 @@
-// src/models/carModel.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
 const Car = sequelize.define('Car', {
-  // O ID será criado automaticamente pelo Sequelize (chave primária, auto-incremento)
   model: {
     type: DataTypes.STRING,
     allowNull: false
@@ -13,12 +11,11 @@ const Car = sequelize.define('Car', {
     allowNull: false
   },
   price: {
-    type: DataTypes.DECIMAL(10, 2), // Ex: 150000.50
+    type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   }
 }, {
-  // Opções adicionais do modelo
-  timestamps: true, // Cria os campos createdAt e updatedAt automaticamente
+  timestamps: true,
 });
 
 module.exports = Car;
